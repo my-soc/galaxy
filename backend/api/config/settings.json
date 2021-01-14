@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "services": {
+    "elasticsearch": {
+      "host": "192.168.20.210",
+      "port": "9200"
+    }
+  },
+  "content" : {
+    "path": "content",
+    "index": "content/connectors/index.json",
+    "commands": "content/connectors/commands.json",
+    "instances": "content/connectors/instances.json"
+
+  },
+  "sample": {
+    "objects" : "tests/sample_data/cti_objects.json"
+  }
+}

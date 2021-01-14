@@ -1,0 +1,11 @@
+PyYAML~=5.3.1
+requests~=2.25.1
+urllib3~=1.26.2
+fastapi~=0.63.0
+uvicorn
+elasticsearch~=7.10.1
+aiofiles
+pydantic~=1.7.3
+python-multipart
+docker~=4.4.1
+xmltodict~=0.12.0
