@@ -1,13 +1,7 @@
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-![Wave Workflow](https://github.com/my-tradingbot/wave/workflows/Wave%20Workflow/badge.svg?branch=master)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/my-tradingbot/wave.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/my-tradingbot/wave/alerts/)
-[![codecov](https://codecov.io/gh/my-tradingbot/wave/branch/master/graph/badge.svg?token=ZK1QVCL7QJ)](https://codecov.io/gh/my-tradingbot/wave)
-
+[![made-with-Python](https://img.shields.io/badge/Built%20with-Python-yellow)](https://www.python.org/)
+[![made-with-FastAPI](https://img.shields.io/badge/Built%20with-FastAPI-success)](https://fastapi.tiangolo.com/)
+[![made-with-elastic](https://img.shields.io/badge/Built%20with-elastic-success)](https://www.elastic.co/)
+[![made-with-MinIO](https://img.shields.io/badge/Built%20with-MinIO-red)](https://min.io/)
+[![made-with-RabbitMQ](https://img.shields.io/badge/Built%20with-RabbitMQ-orange)](https://www.rabbitmq.com/)
 
 Work In Progress ..
-
-https://lucid.app/lucidchart/f2ebaed8-fc35-42c5-90ed-ed8e69d94eeb/view
-
-# Conceptual Architecture
-![](doc/images/conceptual.png)
-
