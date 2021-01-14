@@ -9,13 +9,7 @@ from config.schema.api import GetObjectsResponseModel, GetObjectResponseModel, A
 router = APIRouter()
 
 
-
-@router.post("/api/generator/objects", tags=["generators"])
-async def post_entry(ct_object: object):
-    return Generator.post_objects(ct_object)
-
-
-@router.get("/api/generator/objects", response_model=GetObjectsResponseModel, tags=["notebook"])
+@router.get("/api/generator/objects", tags=["notebook"])
 async def get_entries():
     return Generator.get_object()
 
@@ -30,6 +24,9 @@ async def get_entry(object_id: str):
         return JSONResponse(status_code=404, content=response)
 
 
+@router.post("/api/generator/objects", tags=["generators"])
+async def post_entry(ct_object: ObjectModel):
+    return Generator.post_objects(ct_object)
 
 
 @router.delete("/api/generator/{object_id}", response_model=ObjectDeleteModel,

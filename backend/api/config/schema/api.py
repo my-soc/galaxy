@@ -144,7 +144,7 @@ class ObjectAddModel (BaseModel):
 
 
 class ObjectModel(BaseModel):
-    content: str
+    objects: list
 
     class Config:
         schema_extra={

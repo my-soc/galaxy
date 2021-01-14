@@ -37,7 +37,7 @@ class EsClient(Elasticsearch):
 
     def get_docs(self, index: str):
         try:
-            res = self.connection.search(index=index,size=10, sort='_id')
+            res = self.connection.search(index=index, size=10, sort='_id')
             results = []
             for result in res['hits']['hits']:
                 response = {}

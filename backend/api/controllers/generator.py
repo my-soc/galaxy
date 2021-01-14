@@ -38,9 +38,9 @@ class Generator(object):
     @classmethod
     def post_objects(cls, cti_objects):
         result = {}
-
+        print (cti_objects.dict().get('objects'))
         try:
-            entry = cls.es_client.store_docs(index="stix21", data=cti_objects['objects'])
+            entry = cls.es_client.store_docs(index="stix21", data=cti_objects.dict().get('objects'))
             result["status"] = 'success'
             result["payload"] = entry
             return result
