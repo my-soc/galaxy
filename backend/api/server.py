@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.routes import generator
-from api.controllers.logging import log_debug, log_info, log_error
+from api.controllers.logging import log_info, log_error
 
 from .initialize import BackInit
 

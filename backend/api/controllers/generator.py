@@ -8,6 +8,7 @@ class Generator(object):
 
     @classmethod
     def get_object(cls):
+        log_debug('Request to Get Objects')
         result = {}
         cti_objects = cls.es_client.get_docs(index="stix21")
         result["status"] = 'success'
@@ -16,6 +17,7 @@ class Generator(object):
 
     @classmethod
     def find_object(cls, object_id):
+        log_debug(f'Request to Find Object: {object_id}')
         result = {}
         try:
             cti_object = cls.es_client.get_doc(index="stix21", doc_id=object_id)
@@ -37,8 +39,9 @@ class Generator(object):
 
     @classmethod
     def post_objects(cls, cti_objects):
+        log_info(f'Request to Post {len(cti_objects)} Objects')
+
         result = {}
-        print (cti_objects.dict().get('objects'))
         try:
             entry = cls.es_client.store_docs(index="stix21", data=cti_objects.dict().get('objects'))
             result["status"] = 'success'
@@ -54,6 +57,7 @@ class Generator(object):
 
     @classmethod
     def delete_object(cls, object_id):
+        log_info(f'Request to Delete Object: {object_id}')
         result = {}
         res = cls.es_client.delete_doc(index="stix21", doc_id=object_id)
         if res:

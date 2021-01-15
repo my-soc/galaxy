@@ -4,13 +4,13 @@ from fastapi.responses import JSONResponse
 from api.controllers.generator import Generator
 
 from api.config.schema.api import GetObjectsResponseModel, GetObjectResponseModel, ActionObjectFailedModel,\
-    ObjectModel, ObjectAddModel, ObjectDeleteModel
+    ObjectModel, ObjectDeleteModel
 
 
 router = APIRouter()
 
 
-@router.get("/api/generator/objects", tags=["notebook"])
+@router.get("/api/generator/objects", response_model=GetObjectsResponseModel, tags=["notebook"])
 async def get_entries():
     return Generator.get_object()
 
