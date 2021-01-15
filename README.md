@@ -5,7 +5,7 @@
 [![made-with-elastic](https://img.shields.io/badge/elastic-success)](https://www.elastic.co/)
 [![made-with-MinIO](https://img.shields.io/badge/MinIO-red)](https://min.io/)
 [![made-with-RabbitMQ](https://img.shields.io/badge/RabbitMQ-orange)](https://www.rabbitmq.com/)
-<br/><center>-------</center><br/>
+<br/>-------<br/>
 [![Build Status](https://dev.azure.com/my-soc/galaxy/_apis/build/status/my-soc.galaxy?branchName=main)](https://dev.azure.com/my-soc/galaxy/_build/latest?definitionId=1&branchName=main)
 
 
