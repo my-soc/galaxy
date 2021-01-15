@@ -1,0 +1,32 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    Python39:
+      python.version: '3.9'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
+
+- script: |
+  workingDirectory: backend/
+  displayName: Installing Dependencies 
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+
+- script: |
+  workingDirectory: backend/
+  displayName: pytest
+    pip install pytest pytest-azurepipelines
+    pytest
