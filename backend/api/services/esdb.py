@@ -1,7 +1,7 @@
 import time
 import json
 from elasticsearch import Elasticsearch, helpers
-from controllers.logging import log_debug, log_info, log_error
+from api.controllers.logging import log_debug, log_info, log_error
 
 
 class EsClient(Elasticsearch):

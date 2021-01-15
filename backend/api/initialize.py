@@ -1,7 +1,7 @@
 import json
-from services.esdb import EsClient
+from api.services.esdb import EsClient
 
-from controllers.logging import log_debug, log_info, log_error
+from api.controllers.logging import log_debug, log_info, log_error
 
 SETTINGS = json.load(open('config/settings.json'))
 

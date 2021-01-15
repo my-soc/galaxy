@@ -1,8 +1,9 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
-from controllers.generator import Generator
 
-from config.schema.api import GetObjectsResponseModel, GetObjectResponseModel, ActionObjectFailedModel,\
+from api.controllers.generator import Generator
+
+from api.config.schema.api import GetObjectsResponseModel, GetObjectResponseModel, ActionObjectFailedModel,\
     ObjectModel, ObjectAddModel, ObjectDeleteModel
 
 

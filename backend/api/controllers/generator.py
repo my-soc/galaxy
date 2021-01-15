@@ -1,5 +1,5 @@
-from controllers.logging import log_debug, log_info, log_error
-from services.esdb import EsClient
+from api.controllers.logging import log_debug, log_info, log_error
+from api.services.esdb import EsClient
 
 
 class Generator(object):

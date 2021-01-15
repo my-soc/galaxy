@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import generator
-from controllers.logging import log_debug, log_info, log_error
+from api.routes import generator
+from api.controllers.logging import log_debug, log_info, log_error
 
-from initialize import BackInit
+from .initialize import BackInit
 
 
 ORIGINS = ["http://localhost:3000"]
