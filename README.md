@@ -11,7 +11,7 @@
 [![Build Status](https://dev.azure.com/my-soc/galaxy/_apis/build/status/my-soc.galaxy?branchName=main)](https://dev.azure.com/my-soc/galaxy/_build/latest?definitionId=1&branchName=main)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/my-soc/galaxy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/my-soc/galaxy/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/my-soc/galaxy.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/my-soc/galaxy/context:python)
-
+[![codecov](https://codecov.io/gh/my-soc/galaxy/branch/main/graph/badge.svg?token=6GDSRJ2IRF)](https://codecov.io/gh/my-soc/galaxy)
 
 
 Work In Progress ..
