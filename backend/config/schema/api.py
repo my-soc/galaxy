@@ -29,17 +29,13 @@ class VersionResponseModel(BaseModel):
 
 # / Models Dictionaries\
 
-class Entry(BaseModel):
-    id: str
-    content: str
 
-
-class EntriesResponse(BaseModel):
-    data: List[Entry]
+class ObjectsResponse(BaseModel):
+    data: List[dict]
 
 
 class EntryResponse(BaseModel):
-    data: Entry
+    data: ObjectsResponse
 
 
 class EntryFailedResponse(BaseModel):
@@ -56,7 +52,7 @@ class ActionEntryResponse (BaseModel):
 
 class GetObjectsResponseModel (BaseModel):
     status: str
-    payload: Optional[EntriesResponse]
+    payload: Optional[ObjectsResponse]
 
     class Config:
         schema_extra = {

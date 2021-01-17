@@ -1,7 +1,7 @@
 import time
 import json
 from elasticsearch import Elasticsearch, helpers
-from api.controllers.logging import log_error
+from controllers.logging import log_info, log_error
 
 
 class EsClient(Elasticsearch):
@@ -20,20 +20,33 @@ class EsClient(Elasticsearch):
     def is_alive(self):
         return self.connection.ping()
 
-    def es_prep(self):
+    def es_load_defaults(self, discovery, roots, collections):
         try:
-            return self.connection.indices.create(
-                index="stix21",
-                body={
-                    'mappings': {},
-                    'settings': {},
-                },
-                ignore=400
-            )
+            if not self.indices.exists(discovery.get('_index')):
+                log_info(f"Creating {discovery.get('_index')} index...")
+                self.indices.create(index=discovery.get('_index'))
+            for root in roots:
+                if not self.indices.exists(root.get('_index')):
+                    log_info(f"Creating {root.get('_index')} index...")
+                    self.indices.create(index=root.get('_index'))
+            root_to_update = roots[0]
+            root_to_update.update({
+                "_source": {
+                    'collections': collections
+                }
+            })
+            log_info(f"Loading data in discovery and root indices...")
+            bulk_data = [discovery, root_to_update, roots[1]]
+            helpers.bulk(self, bulk_data)
 
-        except Exception as error:
-            log_error(error.__class__.__name__)
-            return None
+            return {
+                "result": True
+            }
+        except Exception as e:
+            log_error(e)
+            return {
+                "result": False
+            }
 
     def get_docs(self, index: str):
         try:

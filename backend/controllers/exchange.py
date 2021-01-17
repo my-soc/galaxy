@@ -1,8 +1,8 @@
-from api.controllers.logging import log_debug, log_info, log_error
-from api.services.esdb import EsClient
+from controllers.logging import log_debug, log_info, log_error
+from services.esdb import EsClient
 
 
-class Generator(object):
+class Exchange(object):
 
     es_client = EsClient()
 

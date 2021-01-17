@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import generator
-from api.controllers.logging import log_info, log_error
+from routes import exchange
+from routes import taxii
+from controllers.logging import log_info, log_error
 
-from .initialize import BackInit
+from initialize import BackInit
 
 
 ORIGINS = ["http://localhost:3000"]
@@ -23,7 +24,9 @@ if services_up:
         allow_headers=["*"],
     )
 
-    app.include_router(generator.router)
+    app.include_router(exchange.router)
+    app.include_router(taxii.router)
+
     log_info('Galaxy server is running ..')
 
 else:
